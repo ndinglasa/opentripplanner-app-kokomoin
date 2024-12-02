@@ -1,0 +1,19 @@
+{
+  "updaters": [
+    {
+      "type": "stop-time-updater",
+      "feedId": "nmbssncb",
+      "url": "https://sncb-opendata.hafas.de/gtfs/realtime/[YOUR KEY]"
+    },
+    {
+      "type": "vehicle-rental",
+      "sourceType" : "gbfs",
+      "url": "https://data.lime.bike/api/partners/v2/gbfs/brussels/gbfs.json"
+    },
+    {
+      "type": "vehicle-rental",
+      "sourceType" : "gbfs",
+      "url": "https://gbfs.getapony.com/v1/liege/en/gbfs.json"
+    }
+  ]
+}

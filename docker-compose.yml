@@ -1,0 +1,20 @@
+services:
+  otp-graph-builder-service:
+    container_name: otp-graph-builder-container
+    image: opentripplanner/opentripplanner:latest
+    command: --build --save
+    environment:
+      JAVA_OPTIONS: "-Xmx4G"
+    volumes:
+      - ./config:/var/opentripplanner
+
+  otp-app-service:
+    container_name: otp-app-container
+    image: opentripplanner/opentripplanner:latest
+    command: --load
+    environment:
+      JAVA_OPTIONS: "-Xmx4G"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config:/var/opentripplanner
